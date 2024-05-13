@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     if not matrix:
+        print()
+    elif matrix == [[]]:
         print("\n")
     else:
         for row in matrix:
