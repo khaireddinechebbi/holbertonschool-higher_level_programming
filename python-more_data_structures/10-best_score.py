@@ -2,8 +2,9 @@
 def best_score(a_dictionary):
     best_key = None
     best_score = 0
-    for key, value in a_dictionary.items():
-        if value > best_score:
-            best_score = value
-            best_key = key
+    if a_dictionary:
+        for key, value in a_dictionary.items():
+            if value > best_score:
+                best_score = value
+                best_key = key
     return best_key
