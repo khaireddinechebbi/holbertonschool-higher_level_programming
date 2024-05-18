@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 class Square:
-    pass
-obj = Square()
+    def __init__(self) -> None:
+        pass
