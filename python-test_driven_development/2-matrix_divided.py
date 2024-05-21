@@ -46,3 +46,9 @@ float infinity or NaN to integer")
         new_matrix.append(new_row)
 
     return new_matrix
+
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testfile("tests/2-matrix_divided.txt")
