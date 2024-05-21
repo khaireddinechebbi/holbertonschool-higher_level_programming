@@ -13,7 +13,7 @@ basic test:
 
 test size is zero:
     >>> print_square(0)
-    
+
 
 test size is negative:
     >>> try:
@@ -30,11 +30,3 @@ test size is a float:
     ...     print(e)
     ...
     size must be an integer
-
-test size is a string:
-    ...     print_square("H")
-    ... except Exception as e:
-    ...     print(e)
-    ...
-    size must be an integer
-   
