@@ -1,4 +1,4 @@
-Module integer add
+Module add integer
 ==================
 
 import function from Module:
