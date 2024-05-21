@@ -39,6 +39,9 @@ def matrix_divided(matrix, div):
             if not isinstance(num, (int, float)):
                 raise TypeError("matrix must be a matrix \
 (list of lists) of integers/floats")
+            if num == float('inf') or num == float('-inf') or num != num:
+                    raise OverflowError("cannot convert \
+float infinity or NaN to integer")
             new_row.append(round(num / div, 2))
         new_matrix.append(new_row)
 
