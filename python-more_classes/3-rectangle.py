@@ -123,5 +123,5 @@ class Rectangle:
 
         rectangle_str = []
         for _ in range(self.__height):
-            rectangle_str.append("#" * self.width)
+            rectangle_str.append("#" * self.__width)
         return "\n".join(rectangle_str)
