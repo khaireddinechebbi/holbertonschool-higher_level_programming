@@ -26,6 +26,7 @@ class Rectangle:
         perimeter(): return the perimeter of the rectangle
         __str__(): Prints the rectangle with the character #
         __repr__(): Returns a string representation to recreate a new instance
+        __del__(): Prints a message when an instance is deleted
     """
 
     def __init__(self, width=0, height=0):
