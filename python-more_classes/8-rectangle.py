@@ -26,6 +26,8 @@ class Rectangle:
         perimeter(): return the perimeter of the rectangle
         __str__(): Prints the rectangle with the character #
         __repr__(): Returns a string representation to recreate a new instance
+        __del__(): Prints a message when an instance is deleted and decrements the instance count
+        bigger_or_equal(rect_1, rect_2): Returns the biggest rectangle based on area
     """
     number_of_instances = 0
     print_symbol = "#"
