@@ -24,6 +24,7 @@ class Rectangle:
         height(value): Sets the height of the rectangle
         area(): return the area of the rectangle
         perimeter(): return the perimeter of the rectangle
+        __str__(): Prints the rectangle with the character #
     """
 
     def __init__(self, width=0, height=0):
