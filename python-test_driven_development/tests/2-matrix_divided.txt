@@ -29,8 +29,8 @@ ZeroDivisionError: division by zero
 
 >>> matrix_divided([[float('inf'), 2], [3, 4]], 2)
 Traceback (most recent call last):
-OverflowError: cannot convert float infinity to integer
+OverflowError: cannot convert float infinity or NaN to integer
 
 >>> matrix_divided([[float('NaN'), 2], [3, 4]], 2)
 Traceback (most recent call last):
-ValueError: cannot convert float NaN to integer
+OverflowError: cannot convert float infinity or NaN to integer

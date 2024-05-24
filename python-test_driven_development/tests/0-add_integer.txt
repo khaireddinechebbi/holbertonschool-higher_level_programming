@@ -37,4 +37,4 @@ test number infinity:
 test NaN:
     >>> add_integer(float('NaN'), 10)
     Traceback (most recent call last):
-    ValueError: cannot convert float infinity or NaN to integer
+    ValueError: cannot convert float NaN to integer
