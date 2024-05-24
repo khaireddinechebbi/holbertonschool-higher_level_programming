@@ -22,7 +22,7 @@ def say_my_name(first_name, last_name=""):
     if last_name:
         print(f"My name is {first_name} {last_name}")
     else:
-        print(f"My name is {first_name} {last_name}".strip())
+        print(f"My name is {first_name}\n", end="")
 
 
 if __name__ == "__main__":
