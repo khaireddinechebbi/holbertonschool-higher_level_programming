@@ -26,8 +26,12 @@ class Rectangle:
         perimeter(): return the perimeter of the rectangle
         __str__(): Prints the rectangle with the character #
         __repr__(): Returns a string representation to recreate a new instance
-        __del__(): Prints a message when an instance is deleted and decrements the instance count
-        bigger_or_equal(rect_1, rect_2): Returns the biggest rectangle based on area
+        __del__(): Prints a message when an instance is deleted and \
+decrements the instance count
+        bigger_or_equal(rect_1, rect_2): Returns the biggest rectangle \
+based on area
+        square(cls, size): Returns a new Rectangle instance with \
+width == height == size
     """
     number_of_instances = 0
     print_symbol = "#"
@@ -178,5 +182,19 @@ class Rectangle:
             return rect_1
         return rect_2
 
+    @classmethod
     def square(cls, size=0):
-        
+        """
+        Returns a new Rectangle instance with width == height == size.
+
+        Parameters
+        ----------
+        size : int
+            Size of the square
+
+        Returns
+        -------
+        Rectangle
+            New instance of Rectangle with width and height equal to size
+        """
+        return cls(size, size)
