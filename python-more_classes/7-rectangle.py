@@ -26,7 +26,8 @@ class Rectangle:
         perimeter(): return the perimeter of the rectangle
         __str__(): Prints the rectangle with the character #
         __repr__(): Returns a string representation to recreate a new instance
-        __del__(): Prints a message when an instance is deleted and decrements the instance count
+        __del__(): Prints a message when an instance is deleted and \
+decrements the instance count
     """
     number_of_instances = 0
     print_symbol = "#"
