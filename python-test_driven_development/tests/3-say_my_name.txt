@@ -10,7 +10,7 @@ test of two strings:
 
 test of one string:
     >>> say_my_name("Amir")
-    My name is Amir
+    My name is Amir 
 
 test of first_name not string:
     >>> say_my_name(1, "one")
