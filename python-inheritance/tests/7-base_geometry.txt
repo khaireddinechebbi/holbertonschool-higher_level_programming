@@ -13,12 +13,15 @@
 
 # Test integer_validator method with non-integer value
 >>> bg.integer_validator("name", "John")
-[TypeError] name must be an integer
+    Traceback (most recent call last):
+    TypeError: name must be an integer
 
 # Test integer_validator method with non-positive integer value
 >>> bg.integer_validator("age", 0)
-[ValueError] age must be greater than 0
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
 
 # Test integer_validator method with negative integer value
 >>> bg.integer_validator("distance", -4)
-[ValueError] distance must be greater than 0
+    Traceback (most recent call last):
+    ValueError: distance must be greater than 0
