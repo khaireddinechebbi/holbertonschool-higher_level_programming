@@ -9,12 +9,17 @@ Create an instance of MyList
 ----------------------------
     >>> my_list = MyList()
 
+Print the empty list sorted
+---------------------
+    >>> my_list.print_sorted()
+    []
+
 Add elements to the list
 ------------------------
     >>> my_list.append(1)
     >>> my_list.append(4)
     >>> my_list.append(2)
-    >>> my_list.append(3)
+    >>> my_list.append(-3)
     >>> my_list.append(5)
     >>> print(my_list)
     [1, 4, 2, 3, 5]
@@ -22,9 +27,9 @@ Add elements to the list
 Print the list sorted
 ---------------------
     >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
+    [-3, 1, 2, 4, 5]
 
 Check the list is not modified
 ------------------------------
     >>> print(my_list)
-    [1, 4, 2, 3, 5]
+    [1, 4, 2, -3, 5]
