@@ -53,10 +53,9 @@ class Circle(Shape):
 
     def __init__(self, radius):
         """Initialize a circle with a given radius."""
-        self.radius = radius
-    
         if radius < 0:
             raise ValueError("Radius must be non-negative")
+        self.radius = radius
 
     def area(self):
         """Calculate the area of the circle."""
