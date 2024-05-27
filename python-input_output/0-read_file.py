@@ -5,6 +5,8 @@ This module provides a function to read the contents of a file.
 Functions:
     read_file(filename=""): Reads and prints the content of a file.
 """
+
+
 def read_file(filename=""):
     """
     Reads and prints the content of a file.
