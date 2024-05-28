@@ -13,19 +13,19 @@ Usage:
 
 Arguments:
     arg1, arg2, ... : Arguments to be added to the list and saved to the file.
+
+Modules:
+    5-save_to_json_file : This module provides a function to write a \
+        Python object to a file using JSON representation.
+    6-load_from_json_file : This module provides a function to create \
+        a Python object from a JSON file.
 """
 
 
-save_to_json_file = __import__("5-save_to_json_file.py").save_to_json_file
-"""
-This module provides a function to write a Python object \
-to a file using JSON representation.
-"""
-load_from_json_file = __import__("6-load_from_json_file.py").\
+save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("6-load_from_json_file").\
     load_from_json_file
-"""
-This module provides a function to create a Python object from a JSON file.
-"""
+
 filename = 'add_item.json'
 
 if os.path.exists(filename):
