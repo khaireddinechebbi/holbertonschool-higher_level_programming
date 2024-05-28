@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """
-This module provides a function to deserialize a JSON string to a Python object.
+This module provides a function to deserialize a JSON string \
+to a Python object.
 
 Functions:
-    from_json_string(my_str): Returns a Python object represented by a JSON string.
+    from_json_string(my_str): Returns a Python object represented \
+    by a JSON string.
 """
 
 import json
