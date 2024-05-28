@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import sys
+import os
 """
 This module adds all command-line arguments to a Python list \
 and saves them to a file.
@@ -12,8 +14,7 @@ Usage:
 Arguments:
     arg1, arg2, ... : Arguments to be added to the list and saved to the file.
 """
-import sys
-import os
+
 
 save_to_json_file = __import__("5-save_to_json_file.py").save_to_json_file
 """
