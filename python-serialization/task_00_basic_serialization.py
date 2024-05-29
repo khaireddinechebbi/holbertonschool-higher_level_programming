@@ -18,7 +18,6 @@ def serialize_and_save_to_file(data, filename):
     """
     with open(filename, 'w') as f:
         json.dump(data, f)
-    pass
 
 
 def load_and_deserialize(filename):
@@ -32,5 +31,4 @@ def load_and_deserialize(filename):
     dict: The deserialized Python dictionary.
     """
     with open(filename, 'r') as f:
-        data = json.load(f)
-    pass
+        return json.load(f)
