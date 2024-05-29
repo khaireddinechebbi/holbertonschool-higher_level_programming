@@ -4,6 +4,15 @@ This module provide a function that returns a list of lists of integers\
       representing the Pascals triangle
 """
 def pascal_triangle(n):
+    """
+    returns a list of lists of integers representing the Pascals triangle.
+
+    args:
+        n : integer
+    
+    Return:
+        list of lists of integers
+    """
     if n <= 0:
         return []
     
