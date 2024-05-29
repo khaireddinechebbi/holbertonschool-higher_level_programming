@@ -42,7 +42,8 @@ class Student:
         Parameters:
         ----------
         attrs : list, optional
-            A list of strings representing the attribute names to include in the dictionary.
+            A list of strings representing the attribute names \
+            to include in the dictionary.
             If not provided, all attributes will be included.
 
         Returns:
@@ -53,4 +54,5 @@ class Student:
         if attrs is None:
             return self.__dict__
         else:
-            return {attr: self.__dict__[attr] for attr in attrs if attr in self.__dict__}
+            return {attr: self.__dict__[attr] for attr in attrs \
+                    if attr in self.__dict__}
