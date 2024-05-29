@@ -39,6 +39,12 @@ class Student:
         """
         Retrieves a dictionary representation of a Student instance.
 
+        Parameters:
+        ----------
+        attrs : list, optional
+            A list of strings representing the attribute names to include in the dictionary.
+            If not provided, all attributes will be included.
+
         Returns:
         -------
         dict
@@ -49,5 +55,4 @@ class Student:
         else:
             for attr in attrs:
                 if attr in self.__dict__:
-                    return {attr : self.__dict__[attr]}
-
+                    return {attr: self.__dict__[attr]}
