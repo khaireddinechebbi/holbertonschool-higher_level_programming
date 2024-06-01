@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+Module for fetching and processing data from JSONPlaceholder API.
 """
 import requests
 import csv
@@ -7,6 +8,7 @@ import csv
 
 def fetch_and_print_posts():
     """
+    Fetches posts from JSONPlaceholder and prints their titles.
     """
     response = requests.get('https://jsonplaceholder.typicode.com/posts')
     print(f"status code : {response.status_code}")
@@ -18,6 +20,7 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     """
+    Fetches posts from JSONPlaceholder and saves them to a CSV file.
     """
     response = requests.get('https://jsonplaceholder.typicode.com/posts')
     if response.status_code == 200:
