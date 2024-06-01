@@ -2,7 +2,6 @@
 """
 """
 import http.server
-import socketserver
 import json
 
 PORT = 8000
@@ -38,5 +37,5 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b"404 Not Found")
 
 
-httpd = http.server.HTTPServer(('', 8000), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('', 8000), SimpleHTTPRequestHandler)
 httpd.serve_forever()
