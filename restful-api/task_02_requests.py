@@ -18,8 +18,7 @@ def fetch_and_print_posts():
         for post in posts:
             if post == 'title':
                 print(post['title'])
-    else:
-        print("Failed to fetch posts.")
+
 
 def fetch_and_save_posts():
     """
@@ -37,3 +36,8 @@ def fetch_and_save_posts():
             csv_writer = csv.DictWriter(f, fieldnames=['id', 'title', 'body'])
             csv_writer.writeheader()
             csv_writer.writerows(list)
+
+
+if __name__ == "__main__":
+    fetch_and_print_posts()
+    fetch_and_save_posts()
