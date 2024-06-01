@@ -45,7 +45,7 @@ def add_user():
     if not user_data:
         return jsonify({"error": "Invalid input"}), 400
 
-    if 'username' not in user_data:
+    if username not in user_data:
         return jsonify({"error": "Username is required"}), 400
     
     username = user_data.get("username")
