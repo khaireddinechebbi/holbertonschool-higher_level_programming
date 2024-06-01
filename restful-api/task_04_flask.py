@@ -20,22 +20,18 @@ users = {
         "city": "New York"}}
 
 
-@app.route('/')
 def home():
     return "Welcome to the Flask API!"
 
 
-@app.route('/data')
 def get_usernames():
     return jsonify(list(users.keys()))
 
 
-@app.route('/status')
 def status():
     return "OK"
 
 
-@app.route('/users/<username>')
 def get_user(username):
     user = users.get(username)
     if user:
@@ -44,14 +40,13 @@ def get_user(username):
         return jsonify({"error": "User not found"}), 404
 
 
-@app.route('/add_user', methods=['POST'])
 def add_user():
     user_data = request.get_json()
     if not user_data:
         return jsonify({"error": "Invalid input"}), 400
 
     username = user_data.get("username")
-    if not username:
+    if username not in user_data:
         return jsonify({"error": "Username is required"}), 400
 
     if username in users:
