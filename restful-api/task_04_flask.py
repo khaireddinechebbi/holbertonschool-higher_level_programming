@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-A simple Flask API to demonstrate basic endpoint handling and request handling.
+A simple Flask API to demonstrate basic endpoint handling and \
+request handling.
 
 Endpoints:
 - /: Returns a welcome message.
@@ -8,12 +9,6 @@ Endpoints:
 - /status: Returns "OK".
 - /users/<username>: Returns user data based on the provided username.
 - /add_user: Adds a new user to the API.
-
-Example Usage:
-$ curl http://localhost:5000/data
-$ curl http://localhost:5000/status
-$ curl http://localhost:5000/users/jane
-$ curl -X POST -H "Content-Type: application/json" -d '{"username": "john", "name": "John", "age": 30, "city": "New York"}' http://localhost:5000/add_user
 
 Requirements:
 - Flask: pip install Flask
@@ -50,7 +45,8 @@ def get_user(username):
     """
     Returns user data based on the provided username.
 
-    If the user does not exist, returns a JSON response with an error message and a 404 status code.
+    If the user does not exist, returns a JSON response with an \
+    error message and a 404 status code.
     """
     user = users.get(username)
     if user:
@@ -65,8 +61,10 @@ def add_user():
     Adds a new user to the API.
 
     Accepts POST requests with JSON payload containing user data.
-    Returns a JSON response with a confirmation message and the added user's data.
-    If the request payload is missing the username, returns an error message with a 400 status code.
+    Returns a JSON response with a confirmation message and the \
+    added user's data.
+    If the request payload is missing the username, \
+    returns an error message with a 400 status code.
     """
     user_data = request.get_json()
     username = user_data.get("username")
