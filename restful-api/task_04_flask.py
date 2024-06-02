@@ -1,47 +1,80 @@
 #!/usr/bin/python3
+"""
+A simple Flask API to demonstrate basic endpoint handling and request handling.
+
+Endpoints:
+- /: Returns a welcome message.
+- /data: Returns a list of usernames stored in the API.
+- /status: Returns "OK".
+- /users/<username>: Returns user data based on the provided username.
+- /add_user: Adds a new user to the API.
+
+Example Usage:
+$ curl http://localhost:5000/data
+$ curl http://localhost:5000/status
+$ curl http://localhost:5000/users/jane
+$ curl -X POST -H "Content-Type: application/json" -d '{"username": "john", "name": "John", "age": 30, "city": "New York"}' http://localhost:5000/add_user
+
+Requirements:
+- Flask: pip install Flask
+"""
+
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# Dictionary to store user data
-users = {
-    "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
-    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
-}
+# In-memory storage for user data
+users = {}
 
-# Route to welcome message
-@app.route('/')
+
+@app.route("/")
 def home():
+    """Returns a welcome message."""
     return "Welcome to the Flask API!"
 
-# Route to return list of usernames
-@app.route('/data')
-def data():
+
+@app.route("/data")
+def get_data():
+    """Returns a list of usernames stored in the API."""
     return jsonify(list(users.keys()))
 
-# Route to return status
-@app.route('/status')
-def status():
+
+@app.route("/status")
+def get_status():
+    """Returns "OK"."""
     return "OK"
 
-# Route to return user data based on username
-@app.route('/users/<username>')
-def user(username):
-    if username in users:
-        return jsonify(users[username])
-    else:
-        return jsonify({"error": "User not found"})
 
-# Route to add new user
-@app.route('/add_user', methods=['POST'])
+@app.route("/users/<username>")
+def get_user(username):
+    """
+    Returns user data based on the provided username.
+
+    If the user does not exist, returns a JSON response with an error message and a 404 status code.
+    """
+    user = users.get(username)
+    if user:
+        return jsonify(user)
+    else:
+        return jsonify({"error": "User not found"}), 404
+
+
+@app.route("/add_user", methods=["POST"])
 def add_user():
-    data = request.get_json()
-    username = data.get('username')
-    if username:
-        users[username] = data
-        return jsonify({"message": "User added", "user": data})
-    else:
-        return jsonify({"error": "Username not provided"}), 400
+    """
+    Adds a new user to the API.
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    Accepts POST requests with JSON payload containing user data.
+    Returns a JSON response with a confirmation message and the added user's data.
+    If the request payload is missing the username, returns an error message with a 400 status code.
+    """
+    user_data = request.get_json()
+    username = user_data.get("username")
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    users[username] = user_data
+    return jsonify({"message": "User added", "user": user_data}), 201
+
+
+if __name__ == "__main__":
+    app.run()
