@@ -6,13 +6,10 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    # Get MySQL username, password, and database name from command line
-    # arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
 
-    # Connect to the MySQL database
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
