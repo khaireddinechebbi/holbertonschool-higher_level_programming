@@ -1,5 +1,12 @@
 #!/usr/bin/python3
+"""
+Script that lists all `states` from the database `hbtn_0e_0_usa`.
 
+Arguments:
+    mysql username (str) : argv[1]
+    mysql password (str) : argv[2]
+    database name (str) : argv[3]
+"""
 import sys
 import MySQLdb
 
