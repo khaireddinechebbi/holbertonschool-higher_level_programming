@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+Script that adds the State object “Louisiana” to the database hbtn_0e_6_usa.
 """
 import sys
 from model_state import State, Base
@@ -21,3 +22,6 @@ if __name__ == "__main__":
     new_state = "Louisiana"
     session.add(new_state)
     session.commit()
+
+    print(new_state.id)
+    session.close()
