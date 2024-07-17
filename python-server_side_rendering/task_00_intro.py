@@ -2,10 +2,12 @@ import os
 
 def generate_invitations(template, attendees):
     if not isinstance(template, str):
-        raise TypeError
+        print("Error Type")
+        return
     
     if not isinstance(attendees, list):
-        raise TypeError
+        print("Error Type")
+        return
     
     if not template:
         print("template is empty")
