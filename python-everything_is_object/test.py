@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 def increment(n):
-    n += 1
+    n.append(4)
 
-a = 1
-increment(a)
-print(a)
+l = [1, 2, 3]
+increment(l)
+print(l)
